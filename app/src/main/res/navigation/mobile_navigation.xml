@@ -7,32 +7,32 @@
 
     <fragment
         android:id="@+id/nav_internetstatut"
-        android:name="ca.ulaval.ima.tp2.ui.internetstatut.HomeFragment"
+        android:name="ca.ulaval.ima.tp2.ui.internetstatut.InternetStatutFragment"
         android:label="@string/menu_internetstatut"
         tools:layout="@layout/fragment_internetstatut" />
 
     <fragment
         android:id="@+id/nav_about"
-        android:name="ca.ulaval.ima.tp2.ui.about.GalleryFragment"
+        android:name="ca.ulaval.ima.tp2.ui.about.AboutFragment"
         android:label="@string/menu_about"
         tools:layout="@layout/fragment_about" />
 
     <fragment
         android:id="@+id/nav_abacus"
-        android:name="ca.ulaval.ima.tp2.ui.abacus.SlideshowFragment"
+        android:name="ca.ulaval.ima.tp2.ui.abacus.AbacusFragment"
         android:label="@string/menu_abacus"
         tools:layout="@layout/fragment_abacus" />
 
 
     <fragment
         android:id="@+id/nav_form"
-        android:name="ca.ulaval.ima.tp2.ui.share.ShareFragment"
+        android:name="ca.ulaval.ima.tp2.ui.form.FormFragment"
         android:label="@string/menu_form"
         tools:layout="@layout/fragment_form" />
 
     <fragment
         android:id="@+id/nav_myprofile"
-        android:name="ca.ulaval.ima.tp2.ui.send.SendFragment"
+        android:name="ca.ulaval.ima.tp2.ui.myprofile.MyProfileFragment"
         android:label="@string/menu_myprofile"
         tools:layout="@layout/fragment_myprofile" />
 </navigation>

@@ -12,17 +12,17 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import ca.ulaval.ima.tp2.R;
 
-public class HomeFragment extends Fragment {
+public class InternetStatutFragment extends Fragment {
 
-    private HomeViewModel homeViewModel;
+    private InternetStatutViewModel internetStatutViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
             ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                ViewModelProviders.of(this).get(HomeViewModel.class);
+        internetStatutViewModel =
+                ViewModelProviders.of(this).get(InternetStatutViewModel.class);
         View root = inflater.inflate(R.layout.fragment_internetstatut, container, false);
         final TextView textView = root.findViewById(R.id.text_internetstatut);
-        homeViewModel.getText().observe(this, new Observer<String>() {
+        internetStatutViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

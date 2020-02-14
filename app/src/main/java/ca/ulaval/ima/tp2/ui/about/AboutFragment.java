@@ -1,4 +1,4 @@
-package ca.ulaval.ima.tp2.ui.send;
+package ca.ulaval.ima.tp2.ui.about;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,17 +12,17 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import ca.ulaval.ima.tp2.R;
 
-public class SendFragment extends Fragment {
+public class AboutFragment extends Fragment {
 
-    private SendViewModel sendViewModel;
+    private AboutViewModel aboutViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
             ViewGroup container, Bundle savedInstanceState) {
-        sendViewModel =
-                ViewModelProviders.of(this).get(SendViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_myprofile, container, false);
-        final TextView textView = root.findViewById(R.id.text_send);
-        sendViewModel.getText().observe(this, new Observer<String>() {
+        aboutViewModel =
+                ViewModelProviders.of(this).get(AboutViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_about, container, false);
+        final TextView textView = root.findViewById(R.id.text_about);
+        aboutViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

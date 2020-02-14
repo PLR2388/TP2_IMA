@@ -3,7 +3,12 @@ package ca.ulaval.ima.tp2;
 import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+
+import android.view.MenuItem;
 import android.view.View;
+
+import androidx.annotation.NonNull;
+import androidx.core.view.GravityCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -15,8 +20,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 
-public class MainActivity extends AppCompatActivity {
+import ca.ulaval.ima.tp2.ui.abacus.AbacusFragment;
+import ca.ulaval.ima.tp2.ui.about.AboutFragment;
+import ca.ulaval.ima.tp2.ui.form.FormFragment;
+import ca.ulaval.ima.tp2.ui.internetstatut.InternetStatutFragment;
+import ca.ulaval.ima.tp2.ui.myprofile.MyProfileFragment;
 
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    private DrawerLayout drawer;
     private AppBarConfiguration mAppBarConfiguration;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,12 +36,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_internetstatut, R.id.nav_about, R.id.nav_abacus,
+        mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_about,
+                R.id.nav_internetstatut,  R.id.nav_abacus,
                  R.id.nav_form, R.id.nav_myprofile)
                 .setDrawerLayout(drawer)
                 .build();
@@ -38,7 +50,38 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
     }
 
+    @Override
+    public void onBackPressed(){
+        if(drawer.isDrawerOpen(GravityCompat.START)){
+            drawer.closeDrawer(GravityCompat.START);
+        }
+        else{
+            super.onBackPressed();
+        }
+    }
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        switch (menuItem.getItemId()){
+            case R.id.nav_internetstatut:
+                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,new InternetStatutFragment()).commit();
+                break;
+            case R.id.nav_about:
+                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,new AboutFragment()).commit();
+                break;
+            case R.id.nav_abacus:
+                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,new AbacusFragment()).commit();
+                break;
+            case R.id.nav_form:
+                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,new FormFragment()).commit();
+                break;
+            case R.id.nav_myprofile:
+                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,new MyProfileFragment()).commit();
+                break;
+        }
+
+        return true;
+    }
 
     @Override
     public boolean onSupportNavigateUp() {

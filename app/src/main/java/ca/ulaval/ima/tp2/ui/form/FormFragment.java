@@ -1,4 +1,4 @@
-package ca.ulaval.ima.tp2.ui.abacus;
+package ca.ulaval.ima.tp2.ui.form;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,17 +12,17 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import ca.ulaval.ima.tp2.R;
 
-public class SlideshowFragment extends Fragment {
+public class FormFragment extends Fragment {
 
-    private SlideshowViewModel slideshowViewModel;
+    private FormViewModel formViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
             ViewGroup container, Bundle savedInstanceState) {
-        slideshowViewModel =
-                ViewModelProviders.of(this).get(SlideshowViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_abacus, container, false);
-        final TextView textView = root.findViewById(R.id.text_abacus);
-        slideshowViewModel.getText().observe(this, new Observer<String>() {
+        formViewModel =
+                ViewModelProviders.of(this).get(FormViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_form, container, false);
+        final TextView textView = root.findViewById(R.id.text_share);
+        formViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

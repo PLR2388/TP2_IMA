@@ -1,16 +1,16 @@
-package ca.ulaval.ima.tp2.ui.send;
+package ca.ulaval.ima.tp2.ui.form;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class SendViewModel extends ViewModel {
+public class FormViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public SendViewModel() {
+    public FormViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is send fragment");
+        mText.setValue("This is share fragment");
     }
 
     public LiveData<String> getText() {

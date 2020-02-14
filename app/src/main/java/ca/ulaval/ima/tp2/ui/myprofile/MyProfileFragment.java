@@ -1,4 +1,4 @@
-package ca.ulaval.ima.tp2.ui.share;
+package ca.ulaval.ima.tp2.ui.myprofile;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,17 +12,17 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import ca.ulaval.ima.tp2.R;
 
-public class ShareFragment extends Fragment {
+public class MyProfileFragment extends Fragment {
 
-    private ShareViewModel shareViewModel;
+    private MyProfileViewModel myProfileViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
             ViewGroup container, Bundle savedInstanceState) {
-        shareViewModel =
-                ViewModelProviders.of(this).get(ShareViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_form, container, false);
-        final TextView textView = root.findViewById(R.id.text_share);
-        shareViewModel.getText().observe(this, new Observer<String>() {
+        myProfileViewModel =
+                ViewModelProviders.of(this).get(MyProfileViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_myprofile, container, false);
+        final TextView textView = root.findViewById(R.id.text_send);
+        myProfileViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
