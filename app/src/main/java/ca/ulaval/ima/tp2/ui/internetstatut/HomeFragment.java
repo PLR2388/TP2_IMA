@@ -1,4 +1,4 @@
-package ca.ulaval.ima.tp2.ui.home;
+package ca.ulaval.ima.tp2.ui.internetstatut;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -20,8 +20,8 @@ public class HomeFragment extends Fragment {
             ViewGroup container, Bundle savedInstanceState) {
         homeViewModel =
                 ViewModelProviders.of(this).get(HomeViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
-        final TextView textView = root.findViewById(R.id.text_home);
+        View root = inflater.inflate(R.layout.fragment_internetstatut, container, false);
+        final TextView textView = root.findViewById(R.id.text_internetstatut);
         homeViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
