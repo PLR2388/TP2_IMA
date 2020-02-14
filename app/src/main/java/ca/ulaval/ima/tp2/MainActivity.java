@@ -45,9 +45,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                  R.id.nav_form, R.id.nav_myprofile)
                 .setDrawerLayout(drawer)
                 .build();
+
+
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        if (savedInstanceState == null) {
+            navigationView.getMenu().performIdentifierAction(R.id.nav_about, 0);
+        }
+
     }
 
     @Override
