@@ -1,5 +1,6 @@
 package ca.ulaval.ima.tp2.ui.internetstatut;
 
+import android.net.wifi.WifiInfo;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,7 +22,10 @@ public class InternetStatutFragment extends Fragment {
         internetStatutViewModel =
                 ViewModelProviders.of(this).get(InternetStatutViewModel.class);
         View root = inflater.inflate(R.layout.fragment_internetstatut, container, false);
-        
+
+
         return root;
     }
+
+
 }
