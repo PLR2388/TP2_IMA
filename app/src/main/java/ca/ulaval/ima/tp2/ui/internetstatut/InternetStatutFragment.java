@@ -21,13 +21,7 @@ public class InternetStatutFragment extends Fragment {
         internetStatutViewModel =
                 ViewModelProviders.of(this).get(InternetStatutViewModel.class);
         View root = inflater.inflate(R.layout.fragment_internetstatut, container, false);
-        final TextView textView = root.findViewById(R.id.text_internetstatut);
-        internetStatutViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+        
         return root;
     }
 }
