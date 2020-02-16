@@ -2,7 +2,10 @@ package ca.ulaval.ima.tp2.ui.form;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -25,7 +28,9 @@ import androidx.lifecycle.ViewModelProviders;
 
 import java.util.Calendar;
 
+import ca.ulaval.ima.tp2.Main2Activity;
 import ca.ulaval.ima.tp2.MainActivity;
+import ca.ulaval.ima.tp2.Profile;
 import ca.ulaval.ima.tp2.R;
 
 public class FormFragment extends Fragment {
@@ -57,6 +62,85 @@ public class FormFragment extends Fragment {
         sex.check(R.id.maleButton);
         firstName.setText("Paul-Louis");
         lastName.setText("Renard");
+
+
+        firstName.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                if(s.toString().trim().length()==0){
+                    submitButton.setEnabled(false);
+                } else {
+                    submitButton.setEnabled(true);
+                }
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count,
+                                          int after) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                // TODO Auto-generated method stub
+
+            }
+        });
+
+        lastName.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                if(s.toString().trim().length()==0){
+                    submitButton.setEnabled(false);
+                } else {
+                    submitButton.setEnabled(true);
+                }
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count,
+                                          int after) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                // TODO Auto-generated method stub
+
+            }
+        });
+
+        dateofbirth.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                if(s.toString().trim().length()==0){
+                    submitButton.setEnabled(false);
+                } else {
+                    submitButton.setEnabled(true);
+                }
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count,
+                                          int after) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                // TODO Auto-generated method stub
+
+            }
+        });
 
         dateofbirth.setOnClickListener(new View.OnClickListener() {
 
@@ -123,7 +207,24 @@ public class FormFragment extends Fragment {
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+                String first=firstName.getText().toString();
+                String last=lastName.getText().toString();
+                String date=dateofbirth.getText().toString();
+                String genre;
+                if(sex.getCheckedRadioButtonId()==R.id.maleButton){
+                    genre="Masculin";
+                }
+                else{
+                    genre="Féminin";
+                }
+                String program=spinner.getSelectedItem().toString();
+
+                Profile profile=new Profile(first,last,date,genre,program);
+
+                Intent intent=new Intent(getActivity(), Main2Activity.class);
+                intent.putExtra("profile",profile);
+                startActivity(intent);
+
             }
         });
 

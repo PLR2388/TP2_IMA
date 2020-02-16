@@ -5,6 +5,26 @@ import android.os.Parcelable;
 
 public class Profile implements Parcelable {
 
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getBirthDate() {
+        return birthDate;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public String getField() {
+        return field;
+    }
+
     private String firstName;
     private String name;
     private String birthDate;

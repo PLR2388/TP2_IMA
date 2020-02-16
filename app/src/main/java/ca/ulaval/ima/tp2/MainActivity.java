@@ -4,6 +4,7 @@ import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -55,6 +56,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             navigationView.getMenu().performIdentifierAction(R.id.nav_about, 0);
         }
 
+
+
     }
 
     @Override
@@ -83,7 +86,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,new FormFragment()).commit();
                 break;
             case R.id.nav_myprofile:
-                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,new MyProfileFragment()).commit();
+                Log.d("LOL","HEY");
+                Profile gettheProfile= (Profile) getIntent().getExtras().get("profile");
+                Bundle bundle=new Bundle();
+
+                if(gettheProfile!=null){
+                    bundle.putParcelable("profile",gettheProfile);
+                }
+                else{
+                    Profile me=new Profile("Paul-Louis","Renard","1997-02-18","Masculin","GIF");
+                    bundle.putParcelable("profile",me);
+                }
+                MyProfileFragment fragment=new MyProfileFragment();
+                fragment.setArguments(bundle);
+                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,fragment).commit();
                 break;
         }
 
