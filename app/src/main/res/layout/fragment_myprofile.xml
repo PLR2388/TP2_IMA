@@ -2,19 +2,129 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
- 
+
+
     <TextView
-        android:id="@+id/text_send"
-        android:layout_width="match_parent"
+        android:id="@+id/firstNameText2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="40dp"
+        android:text="Prénom:"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/NameText2"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Nom:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/firstNameText2" />
+
+    <TextView
+        android:id="@+id/birthDateText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Date de naissance:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NameText2" />
+
+    <TextView
+        android:id="@+id/sexText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Sexe:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/birthDateText2" />
+
+    <TextView
+        android:id="@+id/fieldText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Programme:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sexText2" />
+
+    <TextView
+        android:id="@+id/firstNameDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="213dp"
+        android:layout_marginLeft="213dp"
+        android:layout_marginTop="40dp"
+        android:text="Prénom:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" /><![CDATA[
+
+    " />
+
+    ]]>
+
+    <TextView
+        android:id="@+id/NameDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+
+        android:layout_marginStart="213dp"
+        android:layout_marginLeft="213dp"
+        android:layout_marginTop="20dp"
+        android:text="Nom:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/firstNameDisplay" />
+
+    <TextView
+        android:id="@+id/birthDateDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="213dp"
+        android:layout_marginLeft="213dp"
+        android:layout_marginTop="20dp"
+        android:text="Date de naissance:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NameDisplay" />
+
+    <TextView
+        android:id="@+id/sexDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="213dp"
+        android:layout_marginLeft="213dp"
+        android:layout_marginTop="20dp"
+        android:text="Sexe:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/birthDateDisplay" />
+
+    <TextView
+        android:id="@+id/fieldDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="213dp"
+        android:layout_marginLeft="213dp"
+        android:layout_marginTop="20dp"
+        android:text="Programme:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sexDisplay" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

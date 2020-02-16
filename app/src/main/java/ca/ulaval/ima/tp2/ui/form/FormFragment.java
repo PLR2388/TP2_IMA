@@ -3,12 +3,19 @@ package ca.ulaval.ima.tp2.ui.form;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -21,47 +28,108 @@ import java.util.Calendar;
 import ca.ulaval.ima.tp2.MainActivity;
 import ca.ulaval.ima.tp2.R;
 
-public class FormFragment extends Fragment implements DatePickerDialog.OnDateSetListener {
+public class FormFragment extends Fragment {
 
-    private FormViewModel formViewModel;
     private EditText dateofbirth;
-    private FragmentManager fragmentManager;
+    private EditText firstName;
+    private EditText lastName;
+    private RadioGroup sex;
+    private Spinner spinner;
+    private Button submitButton;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
-            ViewGroup container, Bundle savedInstanceState) {
-        formViewModel =
-                ViewModelProviders.of(this).get(FormViewModel.class);
+                             ViewGroup container, Bundle savedInstanceState) {
+
         View root = inflater.inflate(R.layout.fragment_form, container, false);
-        fragmentManager=getActivity().getSupportFragmentManager();
-        dateofbirth=root.findViewById(R.id.birthDateEditText);
+        dateofbirth = root.findViewById(R.id.birthDateEditText);
+        firstName = root.findViewById(R.id.firstNameEditText);
+        lastName = root.findViewById(R.id.NameEditText);
+        sex = root.findViewById(R.id.radioGroup);
+        spinner = root.findViewById(R.id.spinner);
+        submitButton=root.findViewById(R.id.submitButton);
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
+                R.array.fields_array, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+
+        dateofbirth.setText("1997-02-18");
+        sex.check(R.id.maleButton);
+        firstName.setText("Paul-Louis");
+        lastName.setText("Renard");
 
         dateofbirth.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
-                //To show current date in the datepicker
-                Calendar mcurrentDate=Calendar.getInstance();
-                int mYear=mcurrentDate.get(Calendar.YEAR);
-                int mMonth=mcurrentDate.get(Calendar.MONTH);
-                int mDay=mcurrentDate.get(Calendar.DAY_OF_MONTH);
+                Calendar mcurrentDate = Calendar.getInstance();
+                int mYear = mcurrentDate.get(Calendar.YEAR);
+                int mMonth = mcurrentDate.get(Calendar.MONTH);
+                int mDay = mcurrentDate.get(Calendar.DAY_OF_MONTH);
 
-                DatePickerDialog mDatePicker=new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
+                DatePickerDialog mDatePicker = new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
                     public void onDateSet(DatePicker datepicker, int selectedyear, int selectedmonth, int selectedday) {
-                            dateofbirth.setText(selectedyear+"-"+selectedmonth+"-"+selectedday);
+                        CharSequence month = "" + (selectedmonth + 1);
+                        CharSequence day = "" + selectedday;
+                        if (selectedmonth < 10) {
+                            month = "0" + month;
+                        }
+                        if (selectedday < 10) {
+                            day = "0" + day;
+                        }
+                        dateofbirth.setText(selectedyear + "-" + month + "-" + day);
                     }
-                },mYear, mMonth, mDay);
+                }, mYear, mMonth, mDay);
                 mDatePicker.getDatePicker().setCalendarViewShown(false);
                 mDatePicker.setTitle("Selectionnes ta date de naissance : ");
-                mDatePicker.show();  }
+                mDatePicker.show();
+            }
         });
 
+        dateofbirth.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                Calendar mcurrentDate = Calendar.getInstance();
+                int mYear = mcurrentDate.get(Calendar.YEAR);
+                int mMonth = mcurrentDate.get(Calendar.MONTH);
+                int mDay = mcurrentDate.get(Calendar.DAY_OF_MONTH);
+
+                DatePickerDialog mDatePicker = new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
+                    public void onDateSet(DatePicker datepicker, int selectedyear, int selectedmonth, int selectedday) {
+                        CharSequence month = "" + (selectedmonth + 1);
+                        CharSequence day = "" + selectedday;
+                        if (selectedmonth < 10) {
+                            month = "0" + month;
+                        }
+                        if (selectedday < 10) {
+                            day = "0" + day;
+                        }
+                        dateofbirth.setText(selectedyear + "-" + month + "-" + day);
+                    }
+                }, mYear, mMonth, mDay);
+                mDatePicker.getDatePicker().setCalendarViewShown(false);
+                mDatePicker.setTitle("Selectionnes ta date de naissance : ");
+                mDatePicker.show();
+            }
+        });
+
+        sex.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+            }
+        });
+
+        submitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                
+            }
+        });
 
         return root;
     }
-
-    @Override
-    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-
-    }
 }
+
+
+

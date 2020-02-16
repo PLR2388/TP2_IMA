@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
         android:layout_marginLeft="18dp"
-        android:layout_marginTop="21dp"
+        android:layout_marginTop="16dp"
         android:text="Prénom:"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
         android:layout_marginLeft="18dp"
-        android:layout_marginTop="21dp"
+        android:layout_marginTop="16dp"
         android:text="Nom:"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/firstNameEditText" />
@@ -67,7 +67,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
         android:layout_marginLeft="18dp"
-        android:layout_marginTop="21dp"
+        android:layout_marginTop="16dp"
         android:text="Date de naissance:"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/NameEditText" />
@@ -82,7 +82,7 @@
         android:layout_marginEnd="18dp"
         android:layout_marginRight="18dp"
         android:ems="10"
-        android:inputType="date"
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/birthDateText" />
@@ -93,7 +93,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
         android:layout_marginLeft="18dp"
-        android:layout_marginTop="21dp"
+        android:layout_marginTop="16dp"
         android:text="Sexe"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/birthDateEditText" />
@@ -127,10 +127,36 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
         android:layout_marginLeft="18dp"
-        android:layout_marginTop="21dp"
+        android:layout_marginTop="16dp"
         android:text="Programme"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginRight="18dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/programText" />
+
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="256dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily=""
+        android:text="Soumettre"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
