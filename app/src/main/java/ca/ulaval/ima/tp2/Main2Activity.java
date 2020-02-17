@@ -16,14 +16,10 @@ public class Main2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-
     }
 
     @Override
     public void onBackPressed() {
-        Profile p= (Profile) getIntent().getExtras().get("profile");
-        Intent intent=new Intent(this, MainActivity.class);
-        intent.putExtra("profile",p);
-        startActivity(intent);
+        super.onBackPressed();
     }
 }

@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private DrawerLayout drawer;
     private AppBarConfiguration mAppBarConfiguration;
+    private Profile currentProfile;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +55,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if (savedInstanceState == null) {
             navigationView.getMenu().performIdentifierAction(R.id.nav_about, 0);
+
         }
 
 
@@ -86,19 +88,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,new FormFragment()).commit();
                 break;
             case R.id.nav_myprofile:
-                Log.d("LOL","HEY");
-                Profile gettheProfile= (Profile) getIntent().getExtras().get("profile");
-                Bundle bundle=new Bundle();
-
-                if(gettheProfile!=null){
-                    bundle.putParcelable("profile",gettheProfile);
-                }
-                else{
-                    Profile me=new Profile("Paul-Louis","Renard","1997-02-18","Masculin","GIF");
-                    bundle.putParcelable("profile",me);
-                }
                 MyProfileFragment fragment=new MyProfileFragment();
-                fragment.setArguments(bundle);
                 getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,fragment).commit();
                 break;
         }

@@ -34,13 +34,13 @@ public class MyProfileFragment extends Fragment {
         sex=root.findViewById(R.id.sexDisplay);
         field=root.findViewById(R.id.fieldDisplay);
 
-        profile=(Profile)this.getArguments().getParcelable("profile");
+        /*profile=(Profile)this.getArguments().getParcelable("profile");
 
         firstName.setText(profile.getFirstName());
         lastName.setText(profile.getName());
         dateBirth.setText(profile.getBirthDate());
         sex.setText(profile.getSex());
-        field.setText(profile.getField());
+        field.setText(profile.getField());*/
 
 
         return root;
