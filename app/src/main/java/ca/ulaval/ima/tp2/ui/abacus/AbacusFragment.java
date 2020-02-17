@@ -16,13 +16,13 @@ import ca.ulaval.ima.tp2.R;
 
 public class AbacusFragment extends Fragment {
 
-    private AbacusViewModel abacusViewModel;
+
     private SeekBar result;
     private SeekBar seekBar1;
     private SeekBar seekBar2;
-    private TextView textView;
-    private TextView textView2;
-    private TextView textView3;
+    private TextView displayValue1;
+    private TextView displayValue2;
+    private TextView displayResult;
     private int value1;
     private int value2;
 
@@ -30,8 +30,6 @@ public class AbacusFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
 
 
-        abacusViewModel =
-                ViewModelProviders.of(this).get(AbacusViewModel.class);
         View root = inflater.inflate(R.layout.fragment_abacus, container, false);
 
         value1=1;
@@ -40,17 +38,17 @@ public class AbacusFragment extends Fragment {
         result=root.findViewById(R.id.result);
         seekBar1=root.findViewById(R.id.seekbar1);
         seekBar2=root.findViewById(R.id.seekbar2);
-        textView=root.findViewById(R.id.textView7);
-        textView2=root.findViewById(R.id.textView8);
-        textView3=root.findViewById(R.id.textView9);
+        displayValue1=root.findViewById(R.id.seekbar1Value);
+        displayValue2=root.findViewById(R.id.seekbar2Value);
+        displayResult=root.findViewById(R.id.resultValue);
 
         seekBar1.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                value1=progress;
+                value1=progress+1;
                 result.setProgress(value1*value2);
-                textView.setText("Value : "+progress);
-                textView3.setText("Value : "+value1*value2);
+                displayValue1.setText(value1+"");
+                displayResult.setText((value1*value2)+"");
             }
 
             @Override
@@ -67,10 +65,10 @@ public class AbacusFragment extends Fragment {
         seekBar2.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                value2=progress;
+                value2=progress+2;
                 result.setProgress(value1*value2);
-                textView2.setText("Value : "+progress);
-                textView3.setText("Value : "+value1*value2);
+                displayValue2.setText(value2+"");
+                displayResult.setText((value1*value2)+"");
             }
 
             @Override
@@ -83,13 +81,8 @@ public class AbacusFragment extends Fragment {
 
             }
         });
-
-
-
-
-
-
-
         return root;
     }
+
+
 }

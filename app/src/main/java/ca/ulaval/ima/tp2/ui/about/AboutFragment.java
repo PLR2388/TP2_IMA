@@ -14,20 +14,17 @@ import ca.ulaval.ima.tp2.R;
 
 public class AboutFragment extends Fragment {
 
-    private AboutViewModel aboutViewModel;
+    private TextView aboutText;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
             ViewGroup container, Bundle savedInstanceState) {
-        aboutViewModel =
-                ViewModelProviders.of(this).get(AboutViewModel.class);
+
         View root = inflater.inflate(R.layout.fragment_about, container, false);
-        final TextView textView = root.findViewById(R.id.text_about);
-        aboutViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+
+        aboutText=root.findViewById(R.id.text_about);
+
+        aboutText.setText(R.string.about);
+
         return root;
     }
 }

@@ -15,12 +15,11 @@ import ca.ulaval.ima.tp2.R;
 
 public class InternetStatutFragment extends Fragment {
 
-    private InternetStatutViewModel internetStatutViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
             ViewGroup container, Bundle savedInstanceState) {
-        internetStatutViewModel =
-                ViewModelProviders.of(this).get(InternetStatutViewModel.class);
+
+
         View root = inflater.inflate(R.layout.fragment_internetstatut, container, false);
 
 
