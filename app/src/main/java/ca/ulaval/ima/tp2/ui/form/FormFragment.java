@@ -1,35 +1,25 @@
 package ca.ulaval.ima.tp2.ui.form;
 
+import android.app.ActionBar;
 import android.app.DatePickerDialog;
-import android.app.Dialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.lifecycle.ViewModelProviders;
 
 import java.util.Calendar;
 
-import ca.ulaval.ima.tp2.Main2Activity;
-import ca.ulaval.ima.tp2.MainActivity;
 import ca.ulaval.ima.tp2.Profile;
 import ca.ulaval.ima.tp2.R;
 
@@ -41,6 +31,7 @@ public class FormFragment extends Fragment {
     private RadioGroup sex;
     private Spinner spinner;
     private Button submitButton;
+    private ActionBar actionBar;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -52,6 +43,7 @@ public class FormFragment extends Fragment {
         sex = root.findViewById(R.id.radioGroup);
         spinner = root.findViewById(R.id.spinner);
         submitButton=root.findViewById(R.id.submitButton);
+        actionBar=getActivity().getActionBar();
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
                 R.array.fields_array, android.R.layout.simple_spinner_item);
@@ -62,6 +54,7 @@ public class FormFragment extends Fragment {
         sex.check(R.id.maleButton);
         firstName.setText("Paul-Louis");
         lastName.setText("Renard");
+
 
 
         firstName.addTextChangedListener(new TextWatcher() {
@@ -221,15 +214,18 @@ public class FormFragment extends Fragment {
 
                 Profile profile=new Profile(first,last,date,genre,program);
 
-                Intent intent=new Intent(getActivity(), Main2Activity.class);
-                intent.putExtra("profile",profile);
-                startActivity(intent);
+               // Intent intent=new Intent(getActivity(), Main2Activity.class);
+              //  intent.putExtra("profile",profile);
+                //startActivity(intent);
 
             }
         });
 
+
         return root;
     }
+
+
 }
 
 

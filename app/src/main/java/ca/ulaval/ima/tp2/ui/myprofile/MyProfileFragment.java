@@ -33,14 +33,19 @@ public class MyProfileFragment extends Fragment {
         dateBirth=root.findViewById(R.id.birthDateDisplay);
         sex=root.findViewById(R.id.sexDisplay);
         field=root.findViewById(R.id.fieldDisplay);
+        Bundle bundle=getActivity().getIntent().getExtras();
+        if(bundle==null){
+            Log.d("HEY","Je suis null");
+        }
+        else{
+            profile=bundle.getParcelable("profile");
+            firstName.setText(profile.getFirstName());
+            lastName.setText(profile.getName());
+            dateBirth.setText(profile.getBirthDate());
+            sex.setText(profile.getSex());
+            field.setText(profile.getField());
+        }
 
-        /*profile=(Profile)this.getArguments().getParcelable("profile");
-
-        firstName.setText(profile.getFirstName());
-        lastName.setText(profile.getName());
-        dateBirth.setText(profile.getBirthDate());
-        sex.setText(profile.getSex());
-        field.setText(profile.getField());*/
 
 
         return root;
