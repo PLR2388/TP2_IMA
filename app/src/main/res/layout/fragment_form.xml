@@ -14,7 +14,10 @@
         android:layout_marginStart="18dp"
         android:layout_marginLeft="18dp"
         android:layout_marginTop="16dp"
+        android:fontFamily="@font/roboto_bold"
         android:text="Prénom:"
+        android:textColor="#000000"
+        android:textSize="12dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,8 +31,11 @@
         android:layout_marginEnd="18dp"
         android:layout_marginRight="18dp"
         android:ems="10"
+        android:fontFamily="@font/roboto_light"
         android:inputType="textPersonName"
         android:text="ton prénom"
+        android:textColor="#000000"
+        android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/firstNameText" />
@@ -41,7 +47,10 @@
         android:layout_marginStart="18dp"
         android:layout_marginLeft="18dp"
         android:layout_marginTop="16dp"
+        android:fontFamily="@font/roboto_bold"
         android:text="Nom:"
+        android:textColor="#000000"
+        android:textSize="12dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/firstNameEditText" />
 
@@ -55,8 +64,11 @@
         android:layout_marginEnd="18dp"
         android:layout_marginRight="18dp"
         android:ems="10"
+        android:fontFamily="@font/roboto_light"
         android:inputType="textPersonName"
         android:text="ton nom"
+        android:textColor="#000000"
+        android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/NameText" />
@@ -68,7 +80,10 @@
         android:layout_marginStart="18dp"
         android:layout_marginLeft="18dp"
         android:layout_marginTop="16dp"
+        android:fontFamily="@font/roboto_bold"
         android:text="Date de naissance:"
+        android:textColor="#000000"
+        android:textSize="12dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/NameEditText" />
 
@@ -82,7 +97,10 @@
         android:layout_marginEnd="18dp"
         android:layout_marginRight="18dp"
         android:ems="10"
+        android:fontFamily="@font/roboto_light"
         android:inputType="text"
+        android:textColor="#000000"
+        android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/birthDateText" />
@@ -94,7 +112,10 @@
         android:layout_marginStart="18dp"
         android:layout_marginLeft="18dp"
         android:layout_marginTop="16dp"
-        android:text="Sexe"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Sexe:"
+        android:textColor="#000000"
+        android:textSize="12dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/birthDateEditText" />
 
@@ -112,13 +133,19 @@
             android:id="@+id/maleButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Masculin" />
+            android:fontFamily="@font/roboto_light"
+            android:text="Masculin"
+            android:textColor="#000000"
+            android:textSize="15dp" />
 
         <RadioButton
             android:id="@+id/femaleButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Féminin" />
+            android:fontFamily="@font/roboto_light"
+            android:text="Féminin"
+            android:textColor="#000000"
+            android:textSize="15dp" />
     </RadioGroup>
 
     <TextView
@@ -128,7 +155,10 @@
         android:layout_marginStart="18dp"
         android:layout_marginLeft="18dp"
         android:layout_marginTop="16dp"
-        android:text="Programme"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Programme:"
+        android:textColor="#000000"
+        android:textSize="12dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
@@ -153,8 +183,11 @@
         android:layout_marginStart="52dp"
         android:layout_marginLeft="52dp"
         android:layout_marginTop="20dp"
-        android:fontFamily=""
+        android:background="#626262"
+        android:fontFamily="@font/roboto_medium"
         android:text="Soumettre"
+        android:textColor="#FFFFFF"
+        android:textSize="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
