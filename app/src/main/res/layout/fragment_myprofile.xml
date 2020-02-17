@@ -7,6 +7,22 @@
     android:layout_height="match_parent" >
 
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="418dp"
+        android:layout_height="195dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginRight="18dp"
+        android:cropToPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/gray_rectangle" />
+
     <TextView
         android:id="@+id/firstNameText2"
         android:layout_width="wrap_content"
@@ -14,7 +30,9 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="30dp"
+        android:fontFamily="@font/roboto_black"
         android:text="Prénom:"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,7 +43,9 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
+        android:fontFamily="@font/roboto_black"
         android:text="Nom:"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/firstNameText2" />
 
@@ -36,7 +56,9 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
+        android:fontFamily="@font/roboto_black"
         android:text="Date de naissance:"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/NameText2" />
 
@@ -47,7 +69,9 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
+        android:fontFamily="@font/roboto_black"
         android:text="Sexe:"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/birthDateText2" />
 
@@ -58,7 +82,9 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
+        android:fontFamily="@font/roboto_black"
         android:text="Programme:"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sexText2" />
 
@@ -70,7 +96,9 @@
         android:layout_marginStart="213dp"
         android:layout_marginLeft="213dp"
         android:layout_marginTop="30dp"
+        android:fontFamily="@font/roboto_light"
         android:text="Paul-Louis"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -82,7 +110,9 @@
         android:layout_marginStart="213dp"
         android:layout_marginLeft="213dp"
         android:layout_marginTop="20dp"
+        android:fontFamily="@font/roboto_light"
         android:text="Renard"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/firstNameDisplay" />
 
@@ -94,7 +124,9 @@
         android:layout_marginStart="213dp"
         android:layout_marginLeft="213dp"
         android:layout_marginTop="20dp"
+        android:fontFamily="@font/roboto_light"
         android:text="1997-02-18"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/NameDisplay" />
 
@@ -106,7 +138,9 @@
         android:layout_marginStart="213dp"
         android:layout_marginLeft="213dp"
         android:layout_marginTop="20dp"
+        android:fontFamily="@font/roboto_light"
         android:text="Masculin"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/birthDateDisplay" />
 
@@ -118,7 +152,9 @@
         android:layout_marginStart="213dp"
         android:layout_marginLeft="213dp"
         android:layout_marginTop="20dp"
+        android:fontFamily="@font/roboto_light"
         android:text="GIF"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sexDisplay" />
 
@@ -126,12 +162,15 @@
         android:id="@+id/descriptionLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="29dp"
-        android:layout_marginLeft="29dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="247dp"
         android:layout_marginRight="247dp"
+        android:fontFamily="@font/roboto_black"
         android:text="Description"
+        android:textColor="#000000"
+        android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fieldText" />

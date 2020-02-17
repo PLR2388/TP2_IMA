@@ -2,6 +2,7 @@ package ca.ulaval.ima.tp2.ui.form;
 
 import android.app.ActionBar;
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -20,6 +21,7 @@ import androidx.fragment.app.Fragment;
 
 import java.util.Calendar;
 
+import ca.ulaval.ima.tp2.MainActivity2;
 import ca.ulaval.ima.tp2.Profile;
 import ca.ulaval.ima.tp2.R;
 
@@ -214,9 +216,9 @@ public class FormFragment extends Fragment {
 
                 Profile profile=new Profile(first,last,date,genre,program);
 
-               // Intent intent=new Intent(getActivity(), Main2Activity.class);
-              //  intent.putExtra("profile",profile);
-                //startActivity(intent);
+                Intent intent=new Intent(getActivity(), MainActivity2.class);
+                intent.putExtra("profile",profile);
+                startActivity(intent);
 
             }
         });
