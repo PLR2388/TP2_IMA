@@ -36,6 +36,7 @@
         android:text="ton prénom"
         android:textColor="#000000"
         android:textSize="15dp"
+        android:backgroundTint="#F8C727"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/firstNameText" />
@@ -69,6 +70,7 @@
         android:text="ton nom"
         android:textColor="#000000"
         android:textSize="15dp"
+        android:backgroundTint="#F8C727"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/NameText" />
@@ -101,6 +103,7 @@
         android:inputType="text"
         android:textColor="#000000"
         android:textSize="15dp"
+        android:backgroundTint="#F8C727"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/birthDateText" />
@@ -135,15 +138,18 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_light"
             android:text="Masculin"
+            android:buttonTint="#F9BD00"
             android:textColor="#000000"
             android:textSize="15dp" />
 
         <RadioButton
             android:id="@+id/femaleButton"
+            android:backgroundTint="#F9BD00"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_light"
             android:text="Féminin"
+            android:buttonTint="#F9BD00"
             android:textColor="#000000"
             android:textSize="15dp" />
     </RadioGroup>
@@ -165,13 +171,16 @@
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginStart="18dp"
         android:layout_marginLeft="18dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="18dp"
         android:layout_marginRight="18dp"
-
+        android:background="#E6E6E6"
+        android:backgroundTint="#E6E6E6"
+        android:outlineAmbientShadowColor="#00000029"
+        android:spinnerMode="dropdown"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/programText" />
@@ -183,11 +192,12 @@
         android:layout_marginStart="52dp"
         android:layout_marginLeft="52dp"
         android:layout_marginTop="20dp"
-        android:background="#626262"
+        android:background="@drawable/rounded_button"
         android:fontFamily="@font/roboto_medium"
         android:text="Soumettre"
         android:textColor="#FFFFFF"
         android:textSize="15dp"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner" />
 

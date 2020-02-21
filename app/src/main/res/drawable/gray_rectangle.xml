@@ -8,5 +8,14 @@
         android:width="640dp"
         android:height="320dp"/>
     <stroke android:width="5dp" android:color="#0000004E"/>
+    <corners android:radius="5dp"></corners>
+    <item
+        android:bottom="10dp"
+        android:drawable="@android:drawable/dialog_holo_light_frame"
+        android:left="50dp"
+        android:right="1000dp"
+        android:top="50dp">
+
+    </item>
 
 </shape>
