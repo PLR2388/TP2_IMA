@@ -25,6 +25,11 @@ public class Profile implements Parcelable {
         return field;
     }
 
+    public Profile clone(){
+        Profile profile=new Profile(firstName,name,birthDate,sex,field);
+        return profile;
+    }
+
     private String firstName;
     private String name;
     private String birthDate;

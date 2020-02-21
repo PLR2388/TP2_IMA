@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private DrawerLayout drawer;
     private AppBarConfiguration mAppBarConfiguration;
+    private Profile profile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
         drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -59,18 +61,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if (savedInstanceState == null) {
             navigationView.getMenu().performIdentifierAction(R.id.nav_about, 0);
-
         }
 
-        //Just to show a back arrow
-        navController.addOnDestinationChangedListener(new NavController.OnDestinationChangedListener() {
-            @Override
-            public void onDestinationChanged(@NonNull NavController controller, @NonNull NavDestination destination, @Nullable Bundle arguments) {
-                if(destination.getLabel().toString().equals("Formulaire")){
-                    getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back);
-                }
-            }
-        });
 
 
     }
@@ -89,21 +81,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()){
             case R.id.nav_internetstatut:
-                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,new InternetStatutFragment()).commit();
+               getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,new InternetStatutFragment()).commit();
                 break;
             case R.id.nav_about:
-                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,new AboutFragment()).commit();
+               getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,new AboutFragment()).commit();
                 break;
             case R.id.nav_abacus:
-                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,new AbacusFragment()).commit();
+               getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,new AbacusFragment()).commit();
                 break;
             case R.id.nav_form:
-                //To have a back arrow
-                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,new FormFragment()).commit();
+               getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,new FormFragment()).commit();
                 break;
             case R.id.nav_myprofile:
-                MyProfileFragment fragment=new MyProfileFragment();
-                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,fragment).commit();
+                MyProfileFragment myProfileFragment=new MyProfileFragment();
+               getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,myProfileFragment).commit();
                 break;
         }
 
@@ -113,12 +104,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onSupportNavigateUp() {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        if(navController.getCurrentDestination().getLabel().toString().equals("Formulaire")){ //React to press when form opens
-            onBackPressed();
-            return true;
-        }
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    public void setProfile(Profile p){
+        this.profile=p.clone();
+    }
+
+    public Profile getProfile(){
+        return this.profile;
     }
 
 

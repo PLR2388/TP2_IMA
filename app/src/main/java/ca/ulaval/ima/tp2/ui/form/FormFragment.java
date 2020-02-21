@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +22,7 @@ import androidx.fragment.app.Fragment;
 
 import java.util.Calendar;
 
+import ca.ulaval.ima.tp2.MainActivity;
 import ca.ulaval.ima.tp2.MainActivity2;
 import ca.ulaval.ima.tp2.Profile;
 import ca.ulaval.ima.tp2.R;
@@ -33,7 +35,6 @@ public class FormFragment extends Fragment {
     private RadioGroup sex;
     private Spinner spinner;
     private Button submitButton;
-    private ActionBar actionBar;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -45,7 +46,6 @@ public class FormFragment extends Fragment {
         sex = root.findViewById(R.id.radioGroup);
         spinner = root.findViewById(R.id.spinner);
         submitButton=root.findViewById(R.id.submitButton);
-        actionBar=getActivity().getActionBar();
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
                 R.array.fields_array, android.R.layout.simple_spinner_item);
@@ -215,7 +215,9 @@ public class FormFragment extends Fragment {
                 String program=spinner.getSelectedItem().toString();
 
                 Profile profile=new Profile(first,last,date,genre,program);
-
+                Log.d("HEY",getActivity().toString());
+                MainActivity activity=(MainActivity)getActivity();
+                activity.setProfile(profile);
                 Intent intent=new Intent(getActivity(), MainActivity2.class);
                 intent.putExtra("profile",profile);
                 startActivity(intent);

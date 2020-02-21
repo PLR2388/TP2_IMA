@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import ca.ulaval.ima.tp2.MainActivity;
 import ca.ulaval.ima.tp2.Profile;
 import ca.ulaval.ima.tp2.R;
 
@@ -27,18 +28,15 @@ public class MyProfileFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
             ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_myprofile, container, false);
-
         firstName=root.findViewById(R.id.firstNameDisplay);
         lastName=root.findViewById(R.id.NameDisplay);
         dateBirth=root.findViewById(R.id.birthDateDisplay);
         sex=root.findViewById(R.id.sexDisplay);
         field=root.findViewById(R.id.fieldDisplay);
-        Bundle bundle=getActivity().getIntent().getExtras();
-        if(bundle==null){
-            Log.d("HEY","Je suis null");
-        }
-        else{
-            profile=bundle.getParcelable("profile");
+
+        Bundle fromForm=getActivity().getIntent().getExtras();
+        if(fromForm!=null){ //If we come from FormFragment
+            profile=fromForm.getParcelable("profile");
             firstName.setText(profile.getFirstName());
             lastName.setText(profile.getName());
             dateBirth.setText(profile.getBirthDate());
@@ -46,8 +44,19 @@ public class MyProfileFragment extends Fragment {
             field.setText(profile.getField());
         }
 
-
-
+        else{
+            MainActivity activity=(MainActivity)getActivity();
+            profile=activity.getProfile();
+            if(profile!=null){  //If we go after doing a first submit
+                firstName.setText(profile.getFirstName());
+                lastName.setText(profile.getName());
+                dateBirth.setText(profile.getBirthDate());
+                sex.setText(profile.getSex());
+                field.setText(profile.getField());
+            }
+    }
         return root;
     }
+
+
 }
