@@ -46,6 +46,9 @@ public class AbacusFragment extends Fragment {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 value1=progress+1;
+                if(value1>9){
+                    value1=9;
+                }
                 result.setProgress(value1*value2);
                 displayValue1.setText(value1+"");
                 displayResult.setText((value1*value2)+"");
@@ -66,6 +69,9 @@ public class AbacusFragment extends Fragment {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 value2=progress+2;
+                if(value2>12){
+                    value2=12;
+                }
                 result.setProgress(value1*value2);
                 displayValue2.setText(value2+"");
                 displayResult.setText((value1*value2)+"");
