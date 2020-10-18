@@ -8,7 +8,7 @@ L'objectif était d'apprendre à utiliser un Navigation Drawer et d'utiliser des
 
 ## À propos
 
-![Screenshot](https://github.com/PLR2388/TP2_IMA/blob/master/image/A%20Propos.pngraw=true)
+![Screenshot](https://github.com/PLR2388/TP2_IMA/blob/master/image/A%20Propos.png?raw=true)
 
 C'est la page qui apparaît par défaut. Il s'agit d'un long texte utilisant une ScrollView pour être lisible entièrement sur l'écran.
 
