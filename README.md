@@ -1,38 +1,57 @@
 # TP2_IMA
 
-Application Android avec un Navigation Drawer.
+An Android application featuring a Navigation Drawer.
 
-![alt text](https://github.com/PLR2388/TP2_IMA/blob/master/image/NavigationDrawer.png?raw=true)
+## Screenshots
 
-L'objectif était d'apprendre à utiliser un Navigation Drawer et d'utiliser des fragments pour les différentes sections. 
+### Navigation Drawer
+![Navigation Drawer](https://github.com/PLR2388/TP2_IMA/blob/master/image/NavigationDrawer.png?raw=true)
 
-## À propos
+## Description
 
-![Screenshot](https://github.com/PLR2388/TP2_IMA/blob/master/image/A%20Propos.png?raw=true)
+The objective of this project was to learn how to use a Navigation Drawer and to implement fragments for different sections.
 
-C'est la page qui apparaît par défaut. Il s'agit d'un long texte utilisant une ScrollView pour être lisible entièrement sur l'écran.
+## Features
 
-## Statut Internet
+### About
 
-![Screenshot](https://github.com/PLR2388/TP2_IMA/blob/master/image/Statut%20internet.png)
-![Screenshot](https://github.com/PLR2388/TP2_IMA/blob/master/image/No%20connection.png?raw=true)
-![Screenshot](https://github.com/PLR2388/TP2_IMA/blob/master/image/3G%20LTE%20internet.png?raw=true)
-![Screenshot](https://github.com/PLR2388/TP2_IMA/blob/master/image/Wifi%20internet.png?raw=true)
+![About](https://github.com/PLR2388/TP2_IMA/blob/master/image/A%20Propos.png?raw=true)
 
-L'appui sur le bouton Statut internet permet de détecter le type de connexion internet utilisé au moment de l'appui. Il distingue 3 états : Pas de connexion, 3G/LTE et Wifi.
+This is the default page, displaying a long text using a ScrollView to ensure readability on the screen.
 
-## Abacus
+### Internet Status
 
-![Screenshot](https://github.com/PLR2388/TP2_IMA/blob/master/image/Abacus.png?raw=true)
+![No Connection](https://github.com/PLR2388/TP2_IMA/blob/master/image/No%20connection.png?raw=true)
+![3G/LTE Connection](https://github.com/PLR2388/TP2_IMA/blob/master/image/3G%20LTE%20internet.png?raw=true)
+![WiFi Connection](https://github.com/PLR2388/TP2_IMA/blob/master/image/Wifi%20internet.png?raw=true)
 
-L'Abacus permet de réaliser une multiplication en utilisant les 2 curseurs en rouge. Le résultat est calculé en même temps et déplace le curseur en gris pour afficher le résultat.
+Pressing the Internet Status button detects the type of internet connection in use at the moment. It distinguishes between three states: No connection, 3G/LTE, and WiFi.
 
-## Formulaire
-![Screenshot](https://github.com/PLR2388/TP2_IMA/blob/master/image/Formulaire.png?raw=true)
+### Abacus
 
-Ce formulaire permet de changer les informations qui sont affichées dans la page Mon Profil. Ces changements ne sont pas persistants et disparaîtront lorsque l'application sera fermée. 
+![Abacus](https://github.com/PLR2388/TP2_IMA/blob/master/image/Abacus.png?raw=true)
 
-## Mon profil
-![Screenshot](https://github.com/PLR2388/TP2_IMA/blob/master/image/Mon%20profil.png?raw=true)
+The Abacus allows you to perform a multiplication using the two red sliders. The result is calculated in real-time, moving the gray slider to display the result.
 
-C'est la page où sont affichées les informations récupérées dans le formulaire. La vue par défaut est celle du screenshot.
+### Form
+
+![Form](https://github.com/PLR2388/TP2_IMA/blob/master/image/Formulaire.png?raw=true)
+
+This form allows you to change the information displayed on the My Profile page. These changes are not persistent and will disappear when the application is closed.
+
+### My Profile
+
+![My Profile](https://github.com/PLR2388/TP2_IMA/blob/master/image/Mon%20profil.png?raw=true)
+
+This page displays the information retrieved from the form. The default view is shown in the screenshot.
+
+## Installation
+
+To run this application, follow these steps:
+
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/PLR2388/TP2_IMA.git
+    ```
+2. Open the project in Android Studio.
+3. Build and run the application on an Android device or emulator.
